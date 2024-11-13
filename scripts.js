@@ -66,7 +66,7 @@ allowfullscreen></iframe>
     }
 
     function main() {
-        fetch(publicSheetUrl).then(populatePage);
+        fetch(publicSheetUrl).then(response => response.json()).then(resp => populatePage(resp));
         // populatePage(exampleData);
 
     }
