@@ -9,6 +9,7 @@ Destiny Shreds Anti-Feminist That Shames Panelist	https://drive.google.com/file/
     const publicSheetUrl="https://docs.google.com/spreadsheets/d/e/2PACX-1vR80u097YLBtsUGFuQhbKoGidr8GZSE95RXu99CR70Xw1QFX0tfsqa8IED5KIKPY10jIk_RpNOIxR_S/pub?gid=0&single=true&output=tsv";
     
     function tabToJson(tsv){
+        console.log(tsv);
 
         let lines=tsv.split("\n");
     
