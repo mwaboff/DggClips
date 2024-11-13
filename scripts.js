@@ -38,6 +38,8 @@ Destiny Shreds Anti-Feminist That Shames Panelist	https://drive.google.com/file/
     }
 
     function populatePage(data) {
+        console.log("RECEVIED DATA");
+        console.table(data);
         let parsedData = tabToJson(data);
 
         let newHtml = "";
