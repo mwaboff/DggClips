@@ -63,8 +63,8 @@ allowfullscreen></iframe>
     }
 
     function main() {
-        // fetch(publicSheetUrl).then(populatePage);
-        populatePage(exampleData);
+        fetch(publicSheetUrl).then(populatePage);
+        // populatePage(exampleData);
 
     }
 
