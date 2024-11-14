@@ -9,6 +9,7 @@ Destiny Shreds Anti-Feminist That Shames Panelist	https://drive.google.com/file/
     const publicSheetUrl="https://docs.google.com/spreadsheets/d/e/2PACX-1vR80u097YLBtsUGFuQhbKoGidr8GZSE95RXu99CR70Xw1QFX0tfsqa8IED5KIKPY10jIk_RpNOIxR_S/pub?gid=0&single=true&output=tsv";
     
     function tabToJson(tsv){
+        console.log("in tabToJson");
         console.log(tsv);
 
         let lines=tsv.split("\n");
@@ -39,8 +40,9 @@ Destiny Shreds Anti-Feminist That Shames Panelist	https://drive.google.com/file/
 
     function populatePage(data) {
         console.log("RECEVIED DATA");
-        console.table(data);
-        let parsedData = tabToJson(data);
+        console.log(data)
+        console.log(data.body);
+        let parsedData = tabToJson(data.body);
 
         let newHtml = "";
         parsedData.forEach((vid) => {
@@ -66,7 +68,13 @@ allowfullscreen></iframe>
     }
 
     function main() {
-        fetch(publicSheetUrl).then(response => populatePage(response));
+        const payload = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'text/csv'
+            }
+        }
+        fetch(publicSheetUrl).then(response => populatePage(response, payload));
         // populatePage(exampleData);
 
     }
